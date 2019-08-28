@@ -20,11 +20,6 @@ var currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
 var dashedWord = currentWord.replace(/\S/gi,"-");
 currentWordText.textContent = dashedWord;
     
-    
-
-
-
-
 
 // Create function that will run whenever the player presses a key
 document.onkeyup = function(event){
@@ -33,21 +28,20 @@ document.onkeyup = function(event){
     var userGuess = event.key;
 
     // Push pressed key value into letterGuessArray
-    letterGuessArray.push(userGuess);
+    letterGuessArray.push(userGuess.toUpperCase());
 
     // Display letterGuessArray in letterGuess span in HTML
     letterGuess.textContent = letterGuessArray;
 
-
-
-
+    // Write logic to determine if key pressed by player matches any letter in Current Word
+ 
     
 
 
 }
 
-// Have browser display dashes in place of each letter in Current Word (for loop?)
-// Write logic to determine is key pressed by player matches any letter in Current Word
+
+
     // if the pressed key matches, display letter in Current Word
     // if the pressed key does not match, decrement number of guesses remaining and display the letter in Letters Already Guessed (need an array for this)
 // Write logic to track keys already pressed and make them unselectable again (if letter is in Letters Already Guessed array, make them unresponsive?)

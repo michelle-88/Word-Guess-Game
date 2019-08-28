@@ -1,5 +1,5 @@
 // Create an array that contains all the possible words for the game
-var wordChoices = ["darth vader", "skywalker", "lightsaber", "droid", "yoda", "jedi", "sith"];
+var wordChoices = ["darth vader", "skywalker", "lightsaber", "droid", "yoda", "jedi", "sith", "stormtrooper"];
 
 // Create variable to store number of player wins. This starts at 0.
 var wins = 0;
@@ -30,7 +30,7 @@ document.onkeyup = function(event){
     var userGuess = event.key;
 
     // Push pressed key value into letterGuessArray
-    letterGuessArray.push(userGuess.toUpperCase());
+    letterGuessArray.push(userGuess);
 
     // Display letterGuessArray in letterGuess span in HTML
     letterGuess.textContent = letterGuessArray;

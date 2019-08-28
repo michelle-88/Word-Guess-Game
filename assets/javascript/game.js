@@ -16,8 +16,14 @@ var letterGuess = document.getElementById("letterguess-text");
 // Randomly choose a word from the wordChoices array
 var currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
 
-// Display randomly chosen word in "Current Word" field in html
-currentWordText.textContent = currentWord;
+// Take Current Word and replace each letter with a dash. Display dashed word in "Current Word" field in html
+var dashedWord = currentWord.replace(/\S/gi,"-");
+currentWordText.textContent = dashedWord;
+    
+    
+
+
+
 
 
 // Create function that will run whenever the player presses a key
@@ -30,7 +36,9 @@ document.onkeyup = function(event){
     letterGuessArray.push(userGuess);
 
     // Display letterGuessArray in letterGuess span in HTML
-    letterGuess.textContent = letterGuessArray
+    letterGuess.textContent = letterGuessArray;
+
+
 
 
     

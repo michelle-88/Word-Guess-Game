@@ -3,18 +3,20 @@ var wordChoices = ["Darth Vader", "Skywalker", "Lightsaber", "Droid", "Yoda", "J
 
 // Create variable to store number of player wins. This starts at 0.
 var wins = 0;
+var guessesRemain = 10;
 
 // Create variables to store all the locations in the HTML where the textContent will be updated accordingly to player input.
 var directionsText = document.getElementById("directions-text");
 var winsText = document.getElementById("wins-text");
 var currentWordText = document.getElementById("currentword-text");
-var guessesRemainText = document.getElementById("guessesremain-text");
+var guessesRemainText = document.getElementById("guessesremain-text")
 var letterGuessArray = [];
 var letterGuess = document.getElementById("letterguess-text");
 
 
 // Randomly choose a word from the wordChoices array
 var currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+console.log(currentWord);
 
 // Take Current Word and replace each letter with a dash. Display dashed word in "Current Word" field in html
 var dashedWord = currentWord.replace(/\S/gi,"-");
@@ -35,15 +37,26 @@ document.onkeyup = function(event){
 
     // Write logic to determine if key pressed by player matches any letter in Current Word
  
-    
+    for(var i = 0; i < currentWord.length; i++){
+        if(userGuess == currentWord.charAt(i)){
+        // if the pressed key matches, display letter in Current Word
+         currentWordText.textContent[i].replace("-", userGuess);
+
+            console.log("you guessed right!");
+        }
+// if the pressed key does not match, decrement number of guesses remaining
+        else {
+            guessesRemain--;
+        }
+    }
 
 
 }
 
 
 
-    // if the pressed key matches, display letter in Current Word
-    // if the pressed key does not match, decrement number of guesses remaining and display the letter in Letters Already Guessed (need an array for this)
+    
+    
 // Write logic to track keys already pressed and make them unselectable again (if letter is in Letters Already Guessed array, make them unresponsive?)
 // Write logic to determine when player wins - player needs to press every key in Current Word before they run out of guesses
     // If player wins, display picture of Star Wars character/word, display guessed word in heading, & increment Wins score

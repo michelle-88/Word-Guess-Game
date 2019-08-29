@@ -12,6 +12,8 @@ var currentWordText = document.getElementById("currentword-text");
 var guessesRemainText = document.getElementById("guessesremain-text")
 var letterGuessArray = [];
 var letterGuess = document.getElementById("letterguess-text");
+var userGuess = "";
+var dashArray = [];
 
 
 // Randomly choose a word from the wordChoices array
@@ -19,7 +21,12 @@ var currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
 console.log(currentWord);
 
 // Take Current Word and replace each letter with a dash. Display dashed word in "Current Word" field in html
-var dashedWord = currentWord.replace(/\S/gi,"-");
+// var dashedWord = currentWord.replace(/\S/gi,"-");
+var dashedWord = ''
+for (let i = 0; i < currentWord.length; i++) {
+    dashArray.push("_");
+    dashedWord = dashArray.join(" ")
+}
 currentWordText.textContent = dashedWord;
     
 
@@ -38,14 +45,18 @@ document.onkeyup = function(event){
     // Write logic to determine if key pressed by player matches any letter in Current Word
  
     for(var i = 0; i < currentWord.length; i++){
-        if(userGuess == currentWord.charAt(i)){
+        if(userGuess === currentWord.charAt(i)){
         // if the pressed key matches, display letter in Current Word
-         currentWordText.textContent[i].replace("-", userGuess);
+        dashArray[i] = userGuess
+        dashedWord = dashArray.join(" ")
+        currentWordText.textContent = dashedWord;
 
             console.log("you guessed right!");
         }
+
 // if the pressed key does not match, decrement number of guesses remaining
         else {
+
             guessesRemain--;
         }
     }

@@ -1,23 +1,15 @@
 // Create an array that contains all the possible words for the game
 var wordChoices = ["vader", "skywalker", "lightsaber", "anakin", "yoda", "jedi", "sith", "stormtrooper", "chewbacca", "palpatine"];
 
-// Create variables to keep track of scores, user guesses, and current word
+// Create variables to keep track of scores, user guesses, current word, and dynamic text on index page
 var wins = 0;
 var guessesRemain = 10;
 var userGuess = "";
 var dashArray = [];
 var letterGuessArray = [];
 var currentWord;
-var displayText = "Hello";
-
-
-// Create variables to store all the locations in the HTML where the textContent will be updated according to player input.
-document.querySelector("#display-text").innerHTML = displayText
-var winsText = document.querySelector("#wins-text");
-var currentWordText = document.querySelector("#currentword-text");
-var guessesRemainText = document.querySelector("#guessesremain-text")
-var letterGuess = document.querySelector("#letterguess-text");
-
+var displayText = "";
+var currentWordText;
 
 
 // Create a function to randomly choose a word from the wordChoices array
@@ -28,14 +20,29 @@ function computerRandomChoice(){
 
 computerRandomChoice();
 
-// Take Current Word and replace each letter with a dash. Display dashed word in "Current Word" field in html
-// var dashedWord = currentWord.replace(/\S/gi,"-");
-var dashedWord = ''
+// Create loop to replace each letter in currentWord with a dash. Display dashed word in "Current Word" field on index page.
+
+var dashedWord = "";
 for (let i = 0; i < currentWord.length; i++) {
     dashArray.push("_");
     dashedWord = dashArray.join(" ")
 }
-currentWordText.textContent = dashedWord;
+currentWordText = dashedWord;
+
+// Create function to display updated results on index page
+
+function updateDisplay() {
+    document.querySelector("#display-text").innerHTML = displayText;
+    document.querySelector("#wins-text").innerHTML = wins;
+    document.querySelector("#currentword-text").innerHTML = currentWordText;
+    document.querySelector("#guessesremain-text").innerHTML = guessesRemain;
+    document.querySelector("#letterguess-text").innerHTML = letterGuessArray;
+};
+
+
+updateDisplay();
+
+
     
 
 // Create function that will run whenever the player presses a key

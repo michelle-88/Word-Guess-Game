@@ -8,14 +8,15 @@ var userGuess = "";
 var dashArray = [];
 var letterGuessArray = [];
 var currentWord;
+var displayText = "Hello";
 
 
 // Create variables to store all the locations in the HTML where the textContent will be updated according to player input.
-var directionsText = document.getElementById("directions-text");
-var winsText = document.getElementById("wins-text");
-var currentWordText = document.getElementById("currentword-text");
-var guessesRemainText = document.getElementById("guessesremain-text")
-var letterGuess = document.getElementById("letterguess-text");
+document.querySelector("#display-text").innerHTML = displayText
+var winsText = document.querySelector("#wins-text");
+var currentWordText = document.querySelector("#currentword-text");
+var guessesRemainText = document.querySelector("#guessesremain-text")
+var letterGuess = document.querySelector("#letterguess-text");
 
 
 

@@ -20,6 +20,12 @@ function computerRandomChoice(){
 
 computerRandomChoice();
 
+// Creatae function to reset guesses remaining and array for letters already guessed
+function resetScores(){
+    guessesRemain = 10;
+    letterGuessArray = [];
+};
+
 // Create loop to replace each letter in currentWord with a dash. Display dashed word in "Current Word" field on index page.
 
 var dashedWord = "";
@@ -59,16 +65,20 @@ document.onkeyup = function(event){
         currentWordText = dashedWord;
 
             console.log("you guessed right!");
-        }        
-    }
-    // if the pressed key does not match, decrement number of guesses remaining
+        };
+    };
+
+    // if the userGuess does not match any letter in currentWord, decrement number of guesses remaining
     if(dashedWord.indexOf(userGuess) == -1){
         guessesRemain--;
-    }
+    };
     
-    // if (guessesRemain === 0){
 
-    // }
+    if (guessesRemain === 0){
+        resetScores();
+        computerRandomChoice();
+        displayText = "Try Again!";
+    };
 
     updateDisplay();
 }

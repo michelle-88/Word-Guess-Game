@@ -80,7 +80,7 @@ document.onkeyup = function(event){
         guessesRemain--;
     };
     
-
+    // if player runs out of guesses, game restarts
     if (guessesRemain === 0){
         resetScores();
         computerRandomChoice();
@@ -89,6 +89,16 @@ document.onkeyup = function(event){
         createDashedWord();
         displayText = "Try Again!";
     };
+// if dashword is equal
+        if(dashedWord.indexOf("_") == -1){
+            wins++;
+            displayText = "You win! The force is strong with you!";
+            resetScores();
+            computerRandomChoice();
+            dashedWord = "";
+            dashArray = [];
+            createDashedWord();
+        }
 
     updateDisplay();
 }

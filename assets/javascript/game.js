@@ -1,5 +1,5 @@
 // Create an array that contains all the possible words for the game
-var wordChoices = ["darth vader", "skywalker", "lightsaber", "droid", "yoda", "jedi", "sith", "stormtrooper"];
+var wordChoices = ["vader", "skywalker", "lightsaber", "anakin", "yoda", "jedi", "sith", "stormtrooper", "chewbacca", "palpatine"];
 
 // Create variable to store number of player wins. This starts at 0.
 var wins = 0;

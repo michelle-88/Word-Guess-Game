@@ -10,6 +10,7 @@ var letterGuessArray = [];
 var currentWord;
 var displayText = "";
 var currentWordText;
+var dashedWord = "";
 
 
 // Create a function to randomly choose a word from the wordChoices array
@@ -27,13 +28,16 @@ function resetScores(){
 };
 
 // Create loop to replace each letter in currentWord with a dash. Display dashed word in "Current Word" field on index page.
-
-var dashedWord = "";
-for (let i = 0; i < currentWord.length; i++) {
-    dashArray.push("_");
-    dashedWord = dashArray.join(" ")
-}
+function createDashedWord(){
+    for (let i = 0; i < currentWord.length; i++) {
+        dashArray.push("_");
+        dashedWord = dashArray.join(" ")
+    }
 currentWordText = dashedWord;
+};
+
+createDashedWord();
+
 
 // Create function to display updated results on index page
 
@@ -49,6 +53,9 @@ updateDisplay();
     
 // Create function that will run whenever the player presses a key
 document.onkeyup = function(event){
+
+    // Clear out contents of display-text element when player starts new game
+    displayText = "";
 
     // Determine which key was pressed
     userGuess = event.key.toLowerCase();
@@ -77,6 +84,9 @@ document.onkeyup = function(event){
     if (guessesRemain === 0){
         resetScores();
         computerRandomChoice();
+        dashedWord = "";
+        dashArray = [];
+        createDashedWord();
         displayText = "Try Again!";
     };
 

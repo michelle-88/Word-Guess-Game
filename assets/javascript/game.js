@@ -89,7 +89,8 @@ document.onkeyup = function(event){
         createDashedWord();
         displayText = "Try Again!";
     };
-// if dashword is equal
+
+    // if player guesses all letters in currentWord, increase wins and restart game
         if(dashedWord.indexOf("_") == -1){
             wins++;
             displayText = "You win! The force is strong with you!";
@@ -101,18 +102,9 @@ document.onkeyup = function(event){
         }
 
     updateDisplay();
-}
+};
 
-
-
-    
-    
-// Write logic to track keys already pressed and make them unselectable again (if letter is in Letters Already Guessed array, make them unresponsive?)
-// Write logic to determine when player wins - player needs to press every key in Current Word before they run out of guesses
     // If player wins, display picture of Star Wars character/word, display guessed word in heading, & increment Wins score
-    // If player wins, I will also need to reset Current Word, Guesses Remaining, & Letters Already Guessed
-// Write logic to determine when player loses - when they run out of guesses before pressing every key in Current Word
-    // If player loses, reset everything
 
 
 

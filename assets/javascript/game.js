@@ -57,7 +57,7 @@ document.onkeyup = function(event){
         // if the pressed key matches, display letter in Current Word
         dashArray[i] = userGuess
         dashedWord = dashArray.join(" ")
-        currentWordText.textContent = dashedWord;
+        currentWordText = dashedWord;
 
             console.log("you guessed right!");
         }

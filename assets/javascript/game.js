@@ -50,9 +50,8 @@ document.onkeyup = function(event){
     // Push pressed key value into letterGuessArray to display on index page
     letterGuessArray.push(userGuess);
 
-    // Write logic to determine if key pressed by player matches any letter in Current Word
- 
-    for(var i = 0; i < currentWord.length; i++){
+    // Write logic to determine if key pressed by player matches any letter in currentWord
+     for(var i = 0; i < currentWord.length; i++){
         if(userGuess === currentWord.charAt(i)){
         // if the pressed key matches, display letter in Current Word
         dashArray[i] = userGuess
@@ -60,14 +59,16 @@ document.onkeyup = function(event){
         currentWordText = dashedWord;
 
             console.log("you guessed right!");
-        }
-
-// if the pressed key does not match, decrement number of guesses remaining
-        else {
-
-            guessesRemain--;
-        }
+        }        
     }
+    // if the pressed key does not match, decrement number of guesses remaining
+    if(dashedWord.indexOf(userGuess) == -1){
+        guessesRemain--;
+    }
+    
+    // if (guessesRemain === 0){
+
+    // }
 
     updateDisplay();
 }

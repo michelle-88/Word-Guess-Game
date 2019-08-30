@@ -1,24 +1,31 @@
 // Create an array that contains all the possible words for the game
 var wordChoices = ["vader", "skywalker", "lightsaber", "anakin", "yoda", "jedi", "sith", "stormtrooper", "chewbacca", "palpatine"];
 
-// Create variable to store number of player wins. This starts at 0.
+// Create variables to keep track of scores, user guesses, and current word
 var wins = 0;
 var guessesRemain = 10;
+var userGuess = "";
+var dashArray = [];
+var letterGuessArray = [];
+var currentWord;
 
-// Create variables to store all the locations in the HTML where the textContent will be updated accordingly to player input.
+
+// Create variables to store all the locations in the HTML where the textContent will be updated according to player input.
 var directionsText = document.getElementById("directions-text");
 var winsText = document.getElementById("wins-text");
 var currentWordText = document.getElementById("currentword-text");
 var guessesRemainText = document.getElementById("guessesremain-text")
-var letterGuessArray = [];
 var letterGuess = document.getElementById("letterguess-text");
-var userGuess = "";
-var dashArray = [];
 
 
-// Randomly choose a word from the wordChoices array
-var currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
-console.log(currentWord);
+
+// Create a function to randomly choose a word from the wordChoices array
+function computerRandomChoice(){
+    currentWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+    console.log(currentWord);
+};
+
+computerRandomChoice();
 
 // Take Current Word and replace each letter with a dash. Display dashed word in "Current Word" field in html
 // var dashedWord = currentWord.replace(/\S/gi,"-");

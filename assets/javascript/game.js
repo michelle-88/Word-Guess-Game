@@ -39,23 +39,16 @@ function updateDisplay() {
     document.querySelector("#letterguess-text").innerHTML = letterGuessArray;
 };
 
-
 updateDisplay();
-
-
     
-
 // Create function that will run whenever the player presses a key
 document.onkeyup = function(event){
 
     // Determine which key was pressed
-    var userGuess = event.key;
+    userGuess = event.key.toLowerCase();
 
-    // Push pressed key value into letterGuessArray
+    // Push pressed key value into letterGuessArray to display on index page
     letterGuessArray.push(userGuess);
-
-    // Display letterGuessArray in letterGuess span in HTML
-    letterGuess.textContent = letterGuessArray;
 
     // Write logic to determine if key pressed by player matches any letter in Current Word
  
@@ -76,7 +69,7 @@ document.onkeyup = function(event){
         }
     }
 
-
+    updateDisplay();
 }
 
 

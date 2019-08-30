@@ -63,6 +63,9 @@ document.onkeyup = function(event){
     // Push pressed key value into letterGuessArray to display on index page
     letterGuessArray.push(userGuess);
 
+    // Decrement number of guesses remaining whenever player guesses a letter
+    guessesRemain--;
+
     // Write logic to determine if key pressed by player matches any letter in currentWord
      for(var i = 0; i < currentWord.length; i++){
         if(userGuess === currentWord.charAt(i)){
@@ -73,11 +76,6 @@ document.onkeyup = function(event){
 
             console.log("you guessed right!");
         };
-    };
-
-    // if the userGuess does not match any letter in currentWord, decrement number of guesses remaining
-    if(dashedWord.indexOf(userGuess) == -1){
-        guessesRemain--;
     };
     
     // if player runs out of guesses, game restarts

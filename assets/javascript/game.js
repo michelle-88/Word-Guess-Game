@@ -96,25 +96,53 @@ document.onkeyup = function(event){
         displayText = "I have a bad feeling about this... Try Again!";
     };
 
-    // if player guesses all letters in currentWord, increase wins and restart game
+    // if player guesses all letters in currentWord, increase wins, display character image, and restart game
         if(dashedWord.indexOf("_") == -1){
             wins++;
             displayText = "You win! The force is strong with you!";
-            resetScores();
-            computerRandomChoice();
-            dashedWord = "";
-            dashArray = [];
-            createDashedWord();
+            
 
-            if(currentWord = wordChoices[0]){
-                characReveal(0);
-            }
+            // Display image of character when word guessed correctly
+                if(currentWord === wordChoices[0]){
+                    characReveal(0);
+                }
+                else if(currentWord === wordChoices[1]){
+                    characReveal(1);
+                }
+                else if(currentWord === wordChoices[2]){
+                    characReveal(2);
+                }
+                else if(currentWord === wordChoices[3]){
+                    characReveal(3);
+                }
+                else if(currentWord === wordChoices[4]){
+                    characReveal(4);
+                }
+                else if(currentWord === wordChoices[5]){
+                    characReveal(5);
+                }
+                else if(currentWord === wordChoices[6]){
+                    characReveal(6);
+                }
+                else if(currentWord === wordChoices[7]){
+                    characReveal(7);
+                }
+                else if(currentWord === wordChoices[8]){
+                    characReveal(8);
+                }
+                else if(currentWord === wordChoices[9]){
+                    characReveal(9);
+                }
+            
+                resetScores();
+                computerRandomChoice();
+                dashedWord = "";
+                dashArray = [];
+                createDashedWord();
+            
         }
 
     updateDisplay();
 };
-
-    // If player wins, display picture of Star Wars character/word, display guessed word in heading, & increment Wins score
-
 
 

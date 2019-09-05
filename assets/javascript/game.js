@@ -12,7 +12,7 @@ var displayText = "";
 var currentWordText;
 var dashedWord = "";
 var displayImage = document.querySelector("img");
-var imageSrc = ["./assets/images/Darth-Vader.jpeg"];
+var imageSrc = ["./assets/images/Darth-Vader.jpeg", "./assets/images/skywalker.jpg", "./assets/images/lightsabers.jpg", "./assets/images/anakin.jpg", "./assets/images/yoda.jpeg", "./assets/images/jedi.jpg", "./assets/images/sith.jpg", "./assets/images/stormtrooper.jpg", "./assets/images/chewbacca.jpg", "./assets/images/palpatine.jpeg"];
 
 // Create function to reveal image of character when player guesses word correctly
 function characReveal(i){

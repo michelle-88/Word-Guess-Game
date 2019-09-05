@@ -11,7 +11,13 @@ var currentWord;
 var displayText = "";
 var currentWordText;
 var dashedWord = "";
+var displayImage = document.querySelector("img");
+var imageSrc = ["./assets/images/Darth-Vader.jpeg"];
 
+// Create function to reveal image of character when player guesses word correctly
+function characReveal(i){
+    displayImage.src = imageSrc[i];
+};
 
 // Create a function to randomly choose a word from the wordChoices array
 function computerRandomChoice(){
@@ -57,6 +63,8 @@ document.onkeyup = function(event){
     // Clear out contents of display-text element when player starts new game
     displayText = "";
 
+    displayImage.src = "./assets/images/star-wars-universe.jpg";
+
     // Determine which key was pressed
     userGuess = event.key.toLowerCase();
 
@@ -97,6 +105,10 @@ document.onkeyup = function(event){
             dashedWord = "";
             dashArray = [];
             createDashedWord();
+
+            if(currentWord = wordChoices[0]){
+                characReveal(0);
+            }
         }
 
     updateDisplay();

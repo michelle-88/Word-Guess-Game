@@ -85,7 +85,7 @@ document.onkeyup = function(event){
         dashedWord = "";
         dashArray = [];
         createDashedWord();
-        displayText = "Try Again!";
+        displayText = "I have a bad feeling about this... Try Again!";
     };
 
     // if player guesses all letters in currentWord, increase wins and restart game

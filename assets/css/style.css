@@ -16,3 +16,8 @@ body {
 .jumbotron {
     background-image: url(../images/stars-background.png);
 }
+
+#display-text{
+    color: #fbe819;
+    font-size: 1.2rem;
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- This div contains the elements that will display text to the user. I will target this with javascript and it will update as the game progresses. -->
+<!-- This div contains the elements that will display text to the user. I will target this with javascript and it will update as the game progresses. -->
 <div class="container">
         <div class="jumbotron">
             <h1 class="display-1 text-center">STAR WARS</h1>
@@ -19,12 +19,18 @@
             <p class="text-center mt-5 mb-0">Press any key to get started... May the Force Be With You!</p>
         </div>
 
-    
-    <p id="display-text"></p>
-    <p>Wins: <span id="wins-text"></span></p>
-    <p>Current Word: <span id="currentword-text"></span></p>
-    <p>Number of Guesses Remaining: <span id="guessesremain-text">10</span></p>
-    <p>Letters Already Guessed: <span id="letterguess-text"></span></p>
+    <div class="row mt-5">   
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            <p>Current Word: <span id="currentword-text"></span></p>
+            <p>Number of Guesses Remaining: <span id="guessesremain-text">10</span></p>
+            <p>Letters Already Guessed: <span id="letterguess-text"></span></p>
+            <p id="display-text"></p>
+            <p>Wins: <span id="wins-text"></span></p>
+        </div>
+    </div>
 </div>
 
 <script src="./assets/javascript/game.js"></script>

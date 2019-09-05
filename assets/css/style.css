@@ -1,4 +1,18 @@
+@font-face {
+    font-family: starWarsFont;
+    src: url(../fonts/Starjedi.ttf)
+}
+
 body {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
+}
+
+.display-1 {
+    font-family: starWarsFont;
+    color: #fbe819;
+}
+
+.jumbotron {
+    background-image: url(../images/stars-background.png)
 }

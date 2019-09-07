@@ -33,8 +33,23 @@ html, body {
     overflow: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media screen and (max-width: 992px){
     body{
         background-image: none;
+    }
+}
+@media screen and (max-width: 400px){
+    body{
+        background-image: none;
+        font-size: 1rem;
+    }
+
+    #display-text{
+        font-size: 1rem;
     }
 }

@@ -43,7 +43,7 @@ img {
         background-image: none;
     }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 440px){
     body{
         background-image: none;
         font-size: 1rem;
@@ -51,5 +51,13 @@ img {
 
     #display-text{
         font-size: 1rem;
+    }
+
+    .display-1{
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 }

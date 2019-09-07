@@ -6,6 +6,8 @@
 body {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
+    background-image: url(../images/galaxy-picture.jpg);
+    background-size: contain;
 }
 
 .display-1 {
@@ -20,4 +22,13 @@ body {
 #display-text{
     color: #fbe819;
     font-size: 1.2rem;
+}
+
+html, body {
+    height: 100%;
+}
+.container {
+    background-color: #060606;
+    min-height: 100%;
+    overflow: hidden;
 }
